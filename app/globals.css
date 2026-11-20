@@ -1,0 +1,100 @@
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  margin: 0;
+  background: #101612;
+  color: #b5f2c7;
+  font-family: ui-monospace, monospace;
+}
+
+main {
+  max-width: 26rem;
+  margin: 1rem;
+  padding: 1.5rem;
+  border: 1px dashed currentColor;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 1.5rem;
+  font-size: 1.25rem;
+}
+
+pre {
+  width: max-content;
+  margin: 0 auto;
+  font: inherit;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  text-align: left;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .parte {
+    animation:
+      var(--entrada) 6s step-end infinite,
+      indicar-derrota 6s linear infinite;
+  }
+}
+
+@keyframes revelar-cabeca {
+  0% { opacity: 0; }
+  8.33%, 100% { opacity: 1; }
+}
+
+@keyframes revelar-tronco {
+  0% { opacity: 0; }
+  16.67%, 100% { opacity: 1; }
+}
+
+@keyframes revelar-primeiro-braco {
+  0% { opacity: 0; }
+  25%, 100% { opacity: 1; }
+}
+
+@keyframes revelar-segundo-braco {
+  0% { opacity: 0; }
+  33.33%, 100% { opacity: 1; }
+}
+
+@keyframes revelar-primeira-perna {
+  0% { opacity: 0; }
+  41.67%, 100% { opacity: 1; }
+}
+
+@keyframes revelar-segunda-perna {
+  0% { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+@keyframes indicar-derrota {
+  0%, 58%, 66%, 74% {
+    color: inherit;
+    animation-timing-function: step-end;
+  }
+
+  62%, 70% {
+    color: #ff595e;
+    animation-timing-function: step-end;
+  }
+
+  78%, 86% {
+    color: #ff595e;
+    filter: opacity(1);
+  }
+
+  96%, 100% {
+    color: #ff595e;
+    filter: opacity(0);
+  }
+}
+
+.doacao {
+  margin: 1.5rem 0 0;
+  line-height: 1.5;
+}
+
+.doacao strong {
+  white-space: nowrap;
+}
