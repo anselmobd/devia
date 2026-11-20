@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Forca</title>
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100svh;
+      margin: 0;
+      background: #101612;
+      color: #b5f2c7;
+      font-family: ui-monospace, monospace;
+    }
+
+    main {
+      max-width: 26rem;
+      margin: 1rem;
+      padding: 1.5rem;
+      border: 1px dashed currentColor;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0 0 1.5rem;
+      font-size: 1.25rem;
+    }
+
+    pre {
+      width: max-content;
+      margin: 0 auto;
+      font: inherit;
+      font-size: 1.5rem;
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .parte {
+        animation:
+          var(--entrada) 6s step-end infinite,
+          indicar-derrota 6s linear infinite;
+      }
+    }
+
+    @keyframes revelar-cabeca {
+      0% { opacity: 0; }
+      8.33%, 100% { opacity: 1; }
+    }
+
+    @keyframes revelar-tronco {
+      0% { opacity: 0; }
+      16.67%, 100% { opacity: 1; }
+    }
+
+    @keyframes revelar-primeiro-braco {
+      0% { opacity: 0; }
+      25%, 100% { opacity: 1; }
+    }
+
+    @keyframes revelar-segundo-braco {
+      0% { opacity: 0; }
+      33.33%, 100% { opacity: 1; }
+    }
+
+    @keyframes revelar-primeira-perna {
+      0% { opacity: 0; }
+      41.67%, 100% { opacity: 1; }
+    }
+
+    @keyframes revelar-segunda-perna {
+      0% { opacity: 0; }
+      50%, 100% { opacity: 1; }
+    }
+
+    @keyframes indicar-derrota {
+      0%, 58%, 66%, 74% {
+        color: inherit;
+        animation-timing-function: step-end;
+      }
+
+      62%, 70% {
+        color: #ff595e;
+        animation-timing-function: step-end;
+      }
+
+      78%, 86% {
+        color: #ff595e;
+        filter: opacity(1);
+      }
+
+      96%, 100% {
+        color: #ff595e;
+        filter: opacity(0);
+      }
+    }
+
+    .doacao {
+      margin: 1.5rem 0 0;
+      line-height: 1.5;
+    }
+
+    .doacao strong {
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Jogo da Forca</h1>
+    <pre role="img" aria-label="Forca com um bonequinho pendurado">+----+
+|    |
+|    <span class="parte" style="--entrada: revelar-cabeca">O</span>
+|   <span class="parte" style="--entrada: revelar-primeiro-braco">/</span><span class="parte" style="--entrada: revelar-tronco">|</span><span class="parte" style="--entrada: revelar-segundo-braco">\</span>
+|    <span class="parte" style="--entrada: revelar-tronco">|</span>
+|   <span class="parte" style="--entrada: revelar-primeira-perna">/</span> <span class="parte" style="--entrada: revelar-segunda-perna">\</span>
+|
++--------</pre>
+    <p class="doacao">
+      Doe <strong>R$1,00</strong> via Pix para me incentivar a desenvolver o jogo da forca.
+      <br>Chave Pix <strong>21-98088-2229</strong>
+    </p>
+  </main>
+</body>
+</html>
